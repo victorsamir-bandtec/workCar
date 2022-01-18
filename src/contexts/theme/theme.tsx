@@ -63,6 +63,10 @@ const GlobalStyle = () => {
           }
 
           button {
+            &:hover {
+              background: none !important;
+            }
+
             &:focus {
               box-shadow: none !important;
             }
@@ -72,8 +76,8 @@ const GlobalStyle = () => {
             }
           }
 
-          #imgWorks {
-            border-radius: 5px;
+          #imgCar {
+            border-radius: 15px;
           }
 
           .work {
@@ -108,6 +112,20 @@ const GlobalStyle = () => {
             height: 0.15rem;
 
             border-radius: 1rem;
+          }
+
+          .animationLeft {
+            animation: left 700ms ease-in-out;
+          }
+
+          @keyframes left {
+            0% {
+              transform: translateX(-350px);
+            }
+
+            100% {
+              transform: translateX(-180px);
+            }
           }
         `}
       />

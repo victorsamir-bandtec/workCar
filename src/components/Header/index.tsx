@@ -1,11 +1,11 @@
 import { useCallback, useState } from "react";
+import { i18n } from "translate/i18n";
+
 import Image from "next/image";
-
-import usePersisted from "hooks/usePersisted";
-import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 import Mobile from "./mobile";
-
 import imgLogo from "assets/logo.svg";
+
+import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 import {
   Flex,
@@ -18,6 +18,7 @@ import {
   useDisclosure,
 } from "@chakra-ui/react";
 import Container from "components/Container";
+import Languages from "components/Languages";
 
 const Header = ({ colorTheme, colorBg }) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
@@ -51,61 +52,82 @@ const Header = ({ colorTheme, colorBg }) => {
             </Heading>
           </HStack>
 
-          <HStack spacing="3rem">
-            <Button fontSize="2.4rem" variant="ghost" onClick={handleDarkMode}>
-              {dark ? <MoonIcon /> : <SunIcon />}
-            </Button>
-
-            <HamburgerIcon
-              onClick={onOpen}
-              w="3.3rem"
-              h="3.3rem"
-              cursor="pointer"
-              color="secundary"
-              display={["block", "none", "none"]}
-            />
-          </HStack>
-
-          <Flex w="50%" display="none" justify="space-between" align="center">
-            <Text
-              className="active"
-              cursor="pointer"
-              fontSize={["md", "md", "lg"]}
-              _hover={{ color: colorTheme }}
-              _after={{
-                background: colorTheme,
-              }}
+          <Flex w={["none", "53%", "55%"]} justify="space-between">
+            <Flex
+              w="80%"
+              display={["none", "flex", "flex"]}
+              justify="space-between"
+              align="center"
             >
-              Sobre
-            </Text>
+              <Text
+                className="active"
+                cursor="pointer"
+                fontSize={["md", "md", "lg"]}
+                _hover={{ color: colorTheme }}
+                _after={{
+                  background: colorTheme,
+                }}
+              >
+                {i18n.t("menu.home")}
+              </Text>
 
-            <Text
-              as="a"
-              href="#skils"
-              cursor="pointer"
-              fontSize={["sm", "md", "lg"]}
-              _hover={{ color: colorTheme }}
-            >
-              Skills
-            </Text>
+              <Text
+                as="a"
+                href="#skils"
+                cursor="pointer"
+                fontSize={["sm", "md", "lg"]}
+                _hover={{ color: colorTheme }}
+              >
+                {i18n.t("menu.attendace")}
+              </Text>
 
-            <Text
-              as="a"
-              href="#laboratorio"
-              cursor="pointer"
-              fontSize={["sm", "md", "lg"]}
-              _hover={{ color: colorTheme }}
-            >
-              Laboratório
-            </Text>
+              <Text
+                as="a"
+                href="#laboratorio"
+                cursor="pointer"
+                fontSize={["sm", "md", "lg"]}
+                _hover={{ color: colorTheme }}
+              >
+                {i18n.t("menu.services")}
+              </Text>
 
-            <Text
-              cursor="pointer"
-              fontSize={["sm", "md", "lg"]}
-              _hover={{ color: colorTheme }}
-            >
-              Contato
-            </Text>
+              <Text
+                cursor="pointer"
+                fontSize={["sm", "md", "lg"]}
+                _hover={{ color: colorTheme }}
+              >
+                {i18n.t("menu.about")}
+              </Text>
+
+              <Text
+                cursor="pointer"
+                fontSize={["sm", "md", "lg"]}
+                _hover={{ color: colorTheme }}
+              >
+                {i18n.t("menu.contact")}
+              </Text>
+
+              <Languages />
+            </Flex>
+
+            <HStack spacing="3rem">
+              <Button
+                fontSize="2.4rem"
+                variant="ghost"
+                onClick={handleDarkMode}
+              >
+                {dark ? <MoonIcon /> : <SunIcon />}
+              </Button>
+
+              <HamburgerIcon
+                onClick={onOpen}
+                w="3.3rem"
+                h="3.3rem"
+                cursor="pointer"
+                color="secundary"
+                display={["block", "none", "none"]}
+              />
+            </HStack>
           </Flex>
         </Flex>
       </Container>

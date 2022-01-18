@@ -1,4 +1,6 @@
 import React from "react";
+import { i18n } from "translate/i18n";
+
 import {
   Drawer,
   DrawerHeader,
@@ -9,6 +11,7 @@ import {
   Link,
   VStack,
 } from "@chakra-ui/react";
+import Languages from "components/Languages";
 
 interface Props {
   colorTheme: string;
@@ -30,23 +33,26 @@ const mobile = ({ isOpen, onClose, colorTheme }: Props) => {
             backgroundColor: "unset !important",
           }}
         />
-        <DrawerHeader fontSize="2xl">Menu</DrawerHeader>
+        <DrawerHeader fontSize="2xl">{i18n.t("titles.menu")}</DrawerHeader>
 
-        <DrawerBody onClick={onClose}>
+        <DrawerBody>
           <VStack
             mt="3rem"
+            mb="2.5rem"
             spacing="2.5rem"
             align="stretch"
             fontSize="xl"
             fontWeight="semibold"
+            onClick={onClose}
           >
-            <Link href="#">Inicio</Link>
-            <Link href="#">Atendimento</Link>
-            <Link href="#">Serviços</Link>
-            <Link href="#">Localização</Link>
-            <Link href="#">Sobre nós</Link>
-            <Link href="#">Contato</Link>
+            <Link href="#">{i18n.t("menu.home")}</Link>
+            <Link href="#about">{i18n.t("menu.about")}</Link>
+            <Link href="#attendace">{i18n.t("menu.attendace")}</Link>
+            <Link href="#services">{i18n.t("menu.services")}</Link>
+            <Link href="#contact">{i18n.t("menu.contact")}</Link>
           </VStack>
+
+          <Languages />
         </DrawerBody>
       </DrawerContent>
     </Drawer>
