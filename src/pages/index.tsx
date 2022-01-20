@@ -56,30 +56,40 @@ const Home = () => {
             Lorem ipsum dolor sit amet consectetur adipisicing.
           </Text>
 
-          <Box as="a" href="#about" mt="8rem">
+          <Box as="a" href="#about" mt="7rem">
             <Button colorTheme={color.primary}>COMEÇAR</Button>
           </Box>
         </Flex>
 
         <span id="about"></span>
 
-        <Flex
-          mt="10rem"
-          flexDir="column"
-          align="start"
-          justify="center"
-          textAlign="center"
-          overflow="hidden"
-        >
-          <Heading fontSize="3xl">Sobre nós</Heading>
-          <Text mt="1rem" mb="5rem" fontSize="xl">
-            Somos uma empresa especializada em embelezamento automotivo, Com
-            profissionais qualificados e certificados para atender todos os
-            nossos clientes.
-          </Text>
+        <Box mt="9rem">
+          <Flex
+            flexDir="column"
+            align="start"
+            justify="center"
+            textAlign="center"
+          >
+            <VStack mb="3rem" spacing="1rem">
+              <Heading fontSize="3xl">Sobre nós</Heading>
+              <Text fontSize="xl">
+                Somos uma empresa especializada em embelezamento automotivo, Com
+                profissionais qualificados e certificados para atender todas
+                necessidades dos nossos clientes. O nosso diferencial é que
+                vamos até você para te atender, Oferecendo extrema qualidade em
+                nossos serviço e conforto para.
+              </Text>
+            </VStack>
+          </Flex>
 
-          <Gallery></Gallery>
-        </Flex>
+          <Box overflow="auto">
+            <Gallery />
+          </Box>
+
+          <Text mt="3rem" fontWeight="semibold" fontSize="xl">
+            Somos uma empresa especializada em.
+          </Text>
+        </Box>
       </Container>
 
       <Flex minH="100vh"></Flex>
