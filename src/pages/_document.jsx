@@ -1,6 +1,6 @@
-import Document, { Html, Head, Main, NextScript } from 'next/document';
-import { ColorModeScript } from '@chakra-ui/react';
-import theme from 'styles/theme';
+import Document, { Html, Head, Main, NextScript } from "next/document";
+import { ColorModeScript } from "@chakra-ui/react";
+import theme from "styles/theme";
 
 class MyDocument extends Document {
   render() {
@@ -12,7 +12,7 @@ class MyDocument extends Document {
           <link rel="preconnect" href="https://fonts.googleapis.com" />
           <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin />
           <link
-            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Quicksand&display=swap"
+            href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,600;1,300;1,400&family=Quicksand&display=swap"
             rel="stylesheet"
           />
         </Head>

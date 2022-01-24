@@ -59,7 +59,7 @@ const GlobalStyle = () => {
           }
 
           h2 {
-            font-family: "Inter", sans-serif !important;
+            font-family: "Rubik", sans-serif !important;
           }
 
           button {
@@ -76,16 +76,24 @@ const GlobalStyle = () => {
             }
           }
 
+          table {
+            td {
+              text-overflow: ellipsis;
+              overflow: hidden;
+              /* white-space: nowrap; */
+            }
+          }
+
           #imgCar {
             border-radius: 15px;
           }
 
-          .work {
+          .plans {
             &:hover {
-              .workContent {
+              .plansContent {
                 opacity: 1;
                 visibility: visible;
-                transition: all 200ms ease-in-out;
+                transition: all 300ms ease-in-out;
               }
             }
 
