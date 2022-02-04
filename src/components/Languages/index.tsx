@@ -9,8 +9,13 @@ import imgEnglish from "assets/ingles.png";
 
 import { Menu, MenuButton, MenuList, MenuItem, Text } from "@chakra-ui/react";
 
-const Languages: React.FC = () => {
-  const handleLanguage = (language) => {
+interface Props {
+  colorTheme?: string;
+  colorBg?: string;
+}
+
+const Languages = ({ colorTheme, colorBg }: Props) => {
+  const handleLanguage = (language: string) => {
     const local = localStorage.getItem("i18nextLng");
 
     if (local === language) {
@@ -27,7 +32,7 @@ const Languages: React.FC = () => {
         {i18n.t("menu.languages")}
       </MenuButton>
 
-      <MenuList bg="transparent" fontSize="md">
+      <MenuList bg={colorBg} fontSize="md">
         <MenuItem onClick={() => handleLanguage("pt-BR")}>
           <Image width="20px" height="20px" src={imgBrazil} alt="brazil" />
 

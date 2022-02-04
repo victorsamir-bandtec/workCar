@@ -20,7 +20,12 @@ import {
 import Container from "components/Container";
 import Languages from "components/Languages";
 
-const Header = ({ colorTheme, colorBg }) => {
+interface Props {
+  colorTheme: string;
+  colorBg: string;
+}
+
+const Header = ({ colorTheme, colorBg }: Props) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { toggleColorMode } = useColorMode();
@@ -44,12 +49,12 @@ const Header = ({ colorTheme, colorBg }) => {
       <Container>
         <Flex w="100%" h="100%" align="center" justify="space-between">
           <HStack spacing="1rem">
-            <Box w="3.5rem" h="3.5rem">
+            <Box w="7.5rem" h="7.5rem" mt="1.5rem">
               <Image src={imgLogo} alt="logo" />
             </Box>
-            <Heading fontWeight="semibold" fontSize={["xl", "md", "xl"]}>
+            {/* <Heading fontWeight="semibold" fontSize={["xl", "md", "xl"]}>
               Esthetique
-            </Heading>
+            </Heading> */}
           </HStack>
 
           <Flex w={["none", "53%", "55%"]} justify="space-between">

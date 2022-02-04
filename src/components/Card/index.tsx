@@ -10,8 +10,8 @@ const Card = ({ title, img }: Props) => {
 
   return (
     <Flex
-      w="28rem"
-      h="40rem"
+      w="32rem"
+      h="50rem"
       justify="start"
       align="end"
       borderRadius="1rem"
@@ -20,7 +20,7 @@ const Card = ({ title, img }: Props) => {
       bgSize="cover"
       bgImage={img}
     >
-      <Box
+      {/* <Box
         w="100%"
         h="8rem"
         p="2rem"
@@ -29,7 +29,7 @@ const Card = ({ title, img }: Props) => {
         bg="whiteAlpha.200"
       >
         <Heading textAlign="left">{title}</Heading>
-      </Box>
+      </Box> */}
     </Flex>
   );
 };
