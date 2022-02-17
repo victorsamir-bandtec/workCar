@@ -46,9 +46,11 @@ const GlobalStyle = () => {
             }
 
             &::-webkit-scrollbar-thumb {
-              background-color: #dddddd;
+              background-color: #b1843f;
               border-radius: 20px;
             }
+
+            overflow-x: hidden;
           }
 
           a {
@@ -76,39 +78,32 @@ const GlobalStyle = () => {
             }
           }
 
-          table {
-            td {
-              text-overflow: ellipsis;
-              overflow: hidden;
-              /* white-space: nowrap; */
+          .btn {
+            transition: all 300ms ease-in-out;
+
+            &::before {
+              content: "";
+              position: absolute;
+              width: 0;
+              height: 100%;
+
+              top: 0;
+              left: 0;
+
+              border-radius: 5px;
+              transition: all 300ms ease-in-out;
+
+              z-index: -1;
+              background-color: #ffd100;
+            }
+
+            &:hover::before {
+              width: 100%;
             }
           }
 
           #imgCar {
             border-radius: 15px;
-          }
-
-          .plans {
-            &:hover {
-              .plansContent {
-                opacity: 1;
-                visibility: visible;
-                transition: all 300ms ease-in-out;
-              }
-            }
-
-            &::before {
-              content: "";
-              position: absolute;
-              display: block;
-              top: -10px;
-              right: 20px;
-
-              width: 30rem;
-              height: 1rem;
-
-              border-radius: 1rem 1rem 0 0;
-            }
           }
 
           .active::after {
@@ -120,20 +115,6 @@ const GlobalStyle = () => {
             height: 0.15rem;
 
             border-radius: 1rem;
-          }
-
-          .animationLeft {
-            animation: left 700ms ease-in-out;
-          }
-
-          @keyframes left {
-            0% {
-              transform: translateX(-350px);
-            }
-
-            100% {
-              transform: translateX(-180px);
-            }
           }
         `}
       />

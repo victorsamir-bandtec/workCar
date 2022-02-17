@@ -8,6 +8,17 @@ import imgLogo from "assets/logo.svg";
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
 import {
+  FlexMotion,
+  BoxMotion,
+  animationMotion,
+  VStackMotion,
+  HeadingMotion,
+  TextMotion,
+  itenXL,
+  itenXR,
+} from "styles/animation";
+
+import {
   Flex,
   Text,
   Heading,
@@ -47,7 +58,15 @@ const Header = ({ colorTheme, colorBg }: Props) => {
       bgColor="transparent"
     >
       <Container>
-        <Flex w="100%" h="100%" align="center" justify="space-between">
+        <FlexMotion
+          w="100%"
+          h="100%"
+          align="center"
+          justify="space-between"
+          initial="hidden"
+          animate="visible"
+          variants={animationMotion}
+        >
           <HStack spacing="1rem">
             <Box w="7.5rem" h="7.5rem" mt="1.5rem">
               <Image src={imgLogo} alt="logo" />
@@ -58,83 +77,100 @@ const Header = ({ colorTheme, colorBg }: Props) => {
           </HStack>
 
           <Flex w={["none", "53%", "55%"]} justify="space-between">
-            <Flex
+            <FlexMotion
               w="80%"
               display={["none", "flex", "flex"]}
               justify="space-between"
               align="center"
+              variants={animationMotion}
             >
-              <Text
-                className="active"
-                cursor="pointer"
-                fontSize={["md", "md", "lg"]}
-                _hover={{ color: colorTheme }}
-                _after={{
-                  background: colorTheme,
-                }}
-              >
-                {i18n.t("menu.home")}
-              </Text>
+              <BoxMotion variants={itenXR}>
+                <Text
+                  className="active"
+                  cursor="pointer"
+                  fontSize={["md", "md", "lg"]}
+                  _hover={{ color: colorTheme }}
+                  _after={{
+                    background: colorTheme,
+                  }}
+                >
+                  {i18n.t("menu.home")}
+                </Text>
+              </BoxMotion>
 
-              <Text
-                as="a"
-                href="#skils"
-                cursor="pointer"
-                fontSize={["sm", "md", "lg"]}
-                _hover={{ color: colorTheme }}
-              >
-                {i18n.t("menu.attendace")}
-              </Text>
+              <BoxMotion variants={itenXR}>
+                <Text
+                  as="a"
+                  href="#skils"
+                  cursor="pointer"
+                  fontSize={["sm", "md", "lg"]}
+                  _hover={{ color: colorTheme }}
+                >
+                  {i18n.t("menu.attendace")}
+                </Text>
+              </BoxMotion>
 
-              <Text
-                as="a"
-                href="#laboratorio"
-                cursor="pointer"
-                fontSize={["sm", "md", "lg"]}
-                _hover={{ color: colorTheme }}
-              >
-                {i18n.t("menu.services")}
-              </Text>
+              <BoxMotion variants={itenXR}>
+                <Text
+                  as="a"
+                  href="#laboratorio"
+                  cursor="pointer"
+                  fontSize={["sm", "md", "lg"]}
+                  _hover={{ color: colorTheme }}
+                >
+                  {i18n.t("menu.services")}
+                </Text>
+              </BoxMotion>
 
-              <Text
-                cursor="pointer"
-                fontSize={["sm", "md", "lg"]}
-                _hover={{ color: colorTheme }}
-              >
-                {i18n.t("menu.about")}
-              </Text>
+              <BoxMotion variants={itenXR}>
+                <Text
+                  cursor="pointer"
+                  fontSize={["sm", "md", "lg"]}
+                  _hover={{ color: colorTheme }}
+                >
+                  {i18n.t("menu.about")}
+                </Text>
+              </BoxMotion>
 
-              <Text
-                cursor="pointer"
-                fontSize={["sm", "md", "lg"]}
-                _hover={{ color: colorTheme }}
-              >
-                {i18n.t("menu.contact")}
-              </Text>
+              <BoxMotion variants={itenXR}>
+                <Text
+                  cursor="pointer"
+                  fontSize={["sm", "md", "lg"]}
+                  _hover={{ color: colorTheme }}
+                >
+                  {i18n.t("menu.contact")}
+                </Text>
+              </BoxMotion>
 
-              <Languages />
-            </Flex>
+              <BoxMotion variants={itenXR}>
+                <Languages />
+              </BoxMotion>
+            </FlexMotion>
 
             <HStack spacing="3rem">
-              <Button
-                fontSize="2.4rem"
-                variant="ghost"
-                onClick={handleDarkMode}
-              >
-                {dark ? <MoonIcon /> : <SunIcon />}
-              </Button>
+              <BoxMotion variants={itenXR}>
+                <Button
+                  fontSize="2.4rem"
+                  variant="ghost"
+                  onClick={handleDarkMode}
+                >
+                  {dark ? <MoonIcon /> : <SunIcon />}
+                </Button>
+              </BoxMotion>
 
-              <HamburgerIcon
-                onClick={onOpen}
-                w="3.3rem"
-                h="3.3rem"
-                cursor="pointer"
-                color="secundary"
-                display={["block", "none", "none"]}
-              />
+              <BoxMotion variants={itenXR}>
+                <HamburgerIcon
+                  onClick={onOpen}
+                  w="3.3rem"
+                  h="3.3rem"
+                  cursor="pointer"
+                  color="secundary"
+                  display={["block", "none", "none"]}
+                />
+              </BoxMotion>
             </HStack>
           </Flex>
-        </Flex>
+        </FlexMotion>
       </Container>
 
       <Mobile isOpen={isOpen} onClose={onClose} colorTheme={colorBg} />

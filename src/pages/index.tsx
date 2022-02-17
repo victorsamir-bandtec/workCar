@@ -7,8 +7,18 @@ import Header from "components/Header";
 import Container from "components/Container";
 import Button from "components/Button";
 import Card from "components/Card";
+import {
+  FlexMotion,
+  BoxMotion,
+  animationMotion,
+  VStackMotion,
+  HeadingMotion,
+  TextMotion,
+  itenXL,
+  itenXR,
+} from "styles/animation";
 
-import imgProscheDark from "assets/cars/mustang.png";
+import imgCar from "assets/cars/car.png";
 import imgCalendar from "assets/icons/calendar.svg";
 import imgTruck from "assets/icons/truck.svg";
 import imgTool from "assets/icons/tool.svg";
@@ -52,75 +62,76 @@ const Home = () => {
       <Header colorTheme={color.primary} colorBg={color.bg} />
 
       <Container>
-        <Flex
-          mt="1rem"
+        <FlexMotion
+          mt="2rem"
           mb="4rem"
-          flexDir="column"
+          flexDir={["column", "row"]}
           align="center"
-          justify="center"
+          justify={["center", "space-between"]}
           textAlign="center"
+          initial="hidden"
+          animate="visible"
+          variants={animationMotion}
         >
-          <Box mt="4rem" opacity="0.92">
-            <Image src={imgProscheDark} alt="brazil" />
-          </Box>
+          <BoxMotion my="4rem" maxW="67rem" variants={itenXL}>
+            <Image src={imgCar} alt="car" />
+          </BoxMotion>
 
-          <Heading fontSize="3xl">Vip Esthetique</Heading>
-          <Text fontSize="xl">
-            Lorem ipsum dolor sit amet consectetur adipisicing.
-          </Text>
+          <VStackMotion spacing={["1rem", "3rem"]} variants={animationMotion}>
+            <HeadingMotion fontSize="4xl">Vip Esthetique</HeadingMotion>
 
-          <Box as="a" href="#about" mt="7rem">
-            <Button colorTheme={color.primary}>COMEÇAR</Button>
-          </Box>
-        </Flex>
+            <TextMotion fontSize="xl" maxW="52rem">
+              Somos uma empresa especializada em detalhamento automotivo, Com
+              cede no Luxemburgo.
+            </TextMotion>
+
+            <Box as="a" href="#about" mt="7rem">
+              <Button colorTheme={color.primary}>CONHECER</Button>
+            </Box>
+          </VStackMotion>
+        </FlexMotion>
 
         <span id="about"></span>
 
         <Box mt="9rem">
           <Flex
-            flexDir="column"
+            flexDir={["column", "row"]}
             align="start"
-            justify="center"
+            justify={["center", "space-between"]}
             textAlign="center"
           >
-            <VStack align="start" textAlign="left" spacing="0">
+            <VStack align="start" textAlign="left" maxW="45rem" spacing="0">
               <Heading fontSize="4xl">Sobre nós</Heading>
               <Text fontSize="xl">
-                Somos uma empresa especializada em embelezamento automotivo, Com
-                profissionais qualificados e certificados para atender todas
-                necessidades dos nossos clientes. O nosso diferencial é que
-                vamos até você para te atender, Oferecendo extrema qualidade em
-                nossos serviço e conforto para.
+                Temos profissionais qualificados e certificados para atender
+                todas necessidades dos nossos clientes. Somos uma empresa
+                especializada em embelezamento automotivo, Com profissionais
+                qualificados e certificados para atender todas necessidades dos
+                nossoss.
               </Text>
             </VStack>
+
+            <Box my="2rem" ml={["none", "3rem"]} overflow="auto">
+              <Gallery w={["140rem", "135rem"]}>
+                <Card
+                  title="Teste"
+                  img="http://vipesthetique.lu/imagens/imagem1.png"
+                />
+                <Card
+                  title="Teste"
+                  img="http://vipesthetique.lu/imagens/imagem2.png"
+                />
+                <Card
+                  title="Teste"
+                  img="http://vipesthetique.lu/imagens/imagem3.png"
+                />
+                <Card
+                  title="Teste"
+                  img="http://vipesthetique.lu/imagens/imagem4.png"
+                />
+              </Gallery>
+            </Box>
           </Flex>
-
-          <Box my="2rem" overflow="auto">
-            <Gallery w="140rem">
-              <Card
-                title="Teste"
-                img="http://vipesthetique.lu/imagens/imagem1.png"
-              />
-              <Card
-                title="Teste"
-                img="http://vipesthetique.lu/imagens/imagem2.png"
-              />
-              <Card
-                title="Teste"
-                img="http://vipesthetique.lu/imagens/imagem3.png"
-              />
-              <Card
-                title="Teste"
-                img="http://vipesthetique.lu/imagens/imagem4.png"
-              />
-            </Gallery>
-          </Box>
-
-          <Text fontSize="xl">
-            Somos uma empresa especializada em embelezamento automotivo, Com
-            profissionais qualificados e certificados para atender todas
-            necessidades dos nossoss.
-          </Text>
         </Box>
 
         <span id="attendece"></span>
@@ -129,17 +140,18 @@ const Home = () => {
           mt="9rem"
           mb="5rem"
           flexDir="column"
-          align="center"
+          align={["center", "start"]}
           justify="start"
         >
           <VStack mb="6rem" align="start" textAlign="left" spacing="0">
             <Heading fontSize="4xl">Nosso atendimento</Heading>
             <Text fontSize="xl">
-              Somos uma empresa especializada em embelezamento automotivo
+              Trabalhamos com agendamento dos serviços para melhor atendimento
+              dos nossos clientes.
             </Text>
           </VStack>
 
-          <Stack direction="column" spacing="5rem">
+          <Stack direction={["column", "row"]} spacing="5rem">
             <Attendece
               title="Agendamento"
               description="Ligue para nós ou envie uma mensagem por um dos nossos canais"
@@ -147,8 +159,8 @@ const Home = () => {
             />
 
             <Attendece
-              title="Iremos até você"
-              description="iremos até você para efetuar o serviço selecionado na data e horário."
+              title="Check in doseu carro."
+              description="Após agendado aguardamos você para recebermos seu carro.​"
               img={imgTruck}
             />
 
@@ -162,8 +174,13 @@ const Home = () => {
 
         <span id="services"></span>
 
-        <Flex mt="9rem" flexDir="column" align="center" justify="start">
-          <VStack mb="3rem" align="start" spacing="0">
+        <Flex
+          mt="9rem"
+          flexDir={["column", "row-reverse"]}
+          align="center"
+          justify={["start", "space-between"]}
+        >
+          <VStack mb="3rem" align="center" spacing="0">
             <Heading fontSize="4xl">Nossos serviços</Heading>
             <Text fontSize="xl">
               Somos uma empresa especializada em embelezamento automotivo, Com
@@ -171,6 +188,10 @@ const Home = () => {
               necessidades dos nossos clientes. O nosso diferencial é que vamos
               até
             </Text>
+
+            <Box my="2rem">
+              <Button colorTheme={color.primary}>BAIXAR</Button>
+            </Box>
           </VStack>
 
           <AspectRatio w="100%">
@@ -180,14 +201,6 @@ const Home = () => {
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </AspectRatio>
-
-          <Text textAlign="center" mt="4rem" fontSize="xl">
-            Somos uma empresa especializada em embelezamento automotivo.
-          </Text>
-
-          <Box my="2rem">
-            <Button colorTheme={color.primary}>BAIXAR</Button>
-          </Box>
         </Flex>
 
         <Box mt="9rem">

@@ -3,7 +3,7 @@ import Card from "components/Card";
 import { ReactNode } from "react";
 
 interface Props {
-  w: string;
+  w: string | string[];
   children: ReactNode;
 }
 

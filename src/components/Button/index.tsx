@@ -6,24 +6,50 @@ interface Props {
   colorTheme: string;
   onClick?: React.MouseEventHandler;
   children: React.ReactNode;
+  secundary?: boolean;
 }
 
-const Button = ({ children, colorTheme, onClick }: Props & ButtonProps) => {
+const Button = ({
+  children,
+  colorTheme,
+  onClick,
+  secundary,
+}: Props & ButtonProps) => {
   return (
     <>
-      <Buttons
-        onClick={onClick}
-        p="2rem 3.2rem"
-        fontSize="md"
-        borderRadius="0.5rem"
-        borderColor={colorTheme}
-        border="1px solid"
-        letterSpacing="0.3rem"
-        color={colorTheme}
-        bg="transparent"
-      >
-        {children}
-      </Buttons>
+      {secundary ? (
+        <Buttons
+          onClick={onClick}
+          p="2rem 3.2rem"
+          fontSize="md"
+          borderRadius="0.5rem"
+          borderColor={colorTheme}
+          border="1px solid"
+          letterSpacing="0.3rem"
+          boxShadow="4px 8px 19px -3px rgba(0,0,0,0.27)"
+          color={colorTheme}
+          bg="transparent"
+        >
+          {children}
+        </Buttons>
+      ) : (
+        <Buttons
+          className="btn"
+          position="relative"
+          onClick={onClick}
+          p="2rem 3.2rem"
+          fontSize="md"
+          borderRadius="0.5rem"
+          border="unset"
+          letterSpacing="0.3rem"
+          boxShadow="4px 8px 19px -3px rgba(0,0,0,0.27)"
+          zIndex="1"
+          color="#fff"
+          bg={colorTheme}
+        >
+          {children}
+        </Buttons>
+      )}
     </>
   );
 };

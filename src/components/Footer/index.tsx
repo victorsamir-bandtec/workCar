@@ -15,12 +15,12 @@ interface Props {
 const Footer = ({ colorTheme, colorBg }: Props) => {
   return (
     <Container>
-      <Flex mt="3rem " pt="4rem" align="start" justify="space-between">
+      <Flex mt="3rem" w="100%" pt="4rem" align="start" justify="space-between">
         <Box w="10rem" h="10rem">
           <Image src={imgLogo} alt="logo" />
         </Box>
 
-        <VStack align="stretch">
+        <VStack align="start">
           <Text
             cursor="pointer"
             fontWeight="bold"
@@ -56,7 +56,7 @@ const Footer = ({ colorTheme, colorBg }: Props) => {
           </Text>
         </VStack>
 
-        <VStack align="stretch">
+        <VStack align="start">
           <Text
             cursor="pointer"
             fontWeight="bold"
