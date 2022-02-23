@@ -4,6 +4,7 @@ import { i18n } from "translate/i18n";
 import Image from "next/image";
 import Mobile from "./mobile";
 import imgLogo from "assets/logo.svg";
+// import imgLogo from "assets/logoDark.svg";
 
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
@@ -11,17 +12,12 @@ import {
   FlexMotion,
   BoxMotion,
   animationMotion,
-  VStackMotion,
-  HeadingMotion,
-  TextMotion,
-  itenXL,
   itenXR,
 } from "styles/animation";
 
 import {
   Flex,
   Text,
-  Heading,
   Button,
   useColorMode,
   HStack,

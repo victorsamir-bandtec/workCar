@@ -40,7 +40,7 @@ import {
   AspectRatio,
   Link,
 } from "@chakra-ui/react";
-import Gallery from "components/Gallery";
+import GalleryMobile from "components/GalleryMobile";
 import Attendece from "components/Attendece";
 import Plans from "components/Plans";
 import Footer from "components/Footer";
@@ -73,46 +73,48 @@ const Home = () => {
           animate="visible"
           variants={animationMotion}
         >
-          <BoxMotion my="4rem" maxW="67rem" variants={itenXL}>
+          <Box my="4rem" maxW="67rem">
             <Image src={imgCar} alt="car" />
-          </BoxMotion>
+          </Box>
 
-          <VStackMotion spacing={["1rem", "3rem"]} variants={animationMotion}>
-            <HeadingMotion fontSize="4xl">Vip Esthetique</HeadingMotion>
+          <VStack spacing={["1rem", "3rem"]}>
+            <Heading fontSize="4xl">Vip Esthetique</Heading>
 
-            <TextMotion fontSize="xl" maxW="52rem">
+            <Text fontSize="xl" maxW="52rem">
               Somos uma empresa especializada em detalhamento automotivo, Com
               cede no Luxemburgo.
-            </TextMotion>
+            </Text>
 
             <Box as="a" href="#about" mt="7rem">
               <Button colorTheme={color.primary}>CONHECER</Button>
             </Box>
-          </VStackMotion>
+          </VStack>
         </FlexMotion>
 
         <span id="about"></span>
 
         <Box mt="9rem">
           <Flex
-            flexDir={["column", "row"]}
-            align="start"
+            flexDir={["column"]}
+            align={["start", "center"]}
             justify={["center", "space-between"]}
-            textAlign="center"
           >
-            <VStack align="start" textAlign="left" maxW="45rem" spacing="0">
-              <Heading fontSize="4xl">Sobre nós</Heading>
-              <Text fontSize="xl">
-                Temos profissionais qualificados e certificados para atender
-                todas necessidades dos nossos clientes. Somos uma empresa
-                especializada em embelezamento automotivo, Com profissionais
-                qualificados e certificados para atender todas necessidades dos
-                nossoss.
+            <VStack
+              align={["start", "center"]}
+              textAlign={["left", "center"]}
+              maxW={["45rem", "70rem"]}
+              spacing="0"
+            >
+              <Heading fontSize={["4xl", "5xl"]}>Sobre nós</Heading>
+              <Text fontSize={["xl", "2xl"]}>
+                Somos uma empresa especializada em embelezamento automotivo, Com
+                profissionais qualificados e certificados para atender todas
+                necessidades dos nossoss.
               </Text>
             </VStack>
 
-            <Box my="2rem" ml={["none", "3rem"]} overflow="auto">
-              <Gallery w={["140rem", "135rem"]}>
+            <Box my="2rem" overflow="auto">
+              <GalleryMobile w={["140rem", "135rem"]}>
                 <Card
                   title="Teste"
                   img="http://vipesthetique.lu/imagens/imagem1.png"
@@ -129,7 +131,7 @@ const Home = () => {
                   title="Teste"
                   img="http://vipesthetique.lu/imagens/imagem4.png"
                 />
-              </Gallery>
+              </GalleryMobile>
             </Box>
           </Flex>
         </Box>
@@ -217,7 +219,7 @@ const Home = () => {
           </Flex>
 
           <Box my="2rem" overflow="auto">
-            <Gallery w="140rem">
+            <GalleryMobile w="140rem">
               <Card
                 title="Teste"
                 img="http://vipesthetique.lu/imagens/imagem1.png"
@@ -234,7 +236,7 @@ const Home = () => {
                 title="Teste"
                 img="http://vipesthetique.lu/imagens/imagem4.png"
               />
-            </Gallery>
+            </GalleryMobile>
           </Box>
 
           <Text fontWeight="semibold" fontSize="xl">
@@ -274,7 +276,7 @@ const Home = () => {
         </Flex>
 
         <Box py="3rem" overflow="auto">
-          <Gallery w="80rem">
+          <GalleryMobile w="80rem">
             <VStack as="a" href="tel:+352 621 512 645" spacing="0">
               <Image src={imgPhone} alt="phone" />
               <Text fontWeight="semibold" fontSize="2xl">
@@ -314,7 +316,7 @@ const Home = () => {
               </Text>
               <Text fontSize="lg">contact@vipesthetique.lu</Text>
             </VStack>
-          </Gallery>
+          </GalleryMobile>
         </Box>
       </Container>
 
