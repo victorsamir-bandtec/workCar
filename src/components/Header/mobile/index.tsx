@@ -2,6 +2,15 @@ import React from "react";
 import { i18n } from "translate/i18n";
 
 import {
+  FlexMotion,
+  BoxMotion,
+  animationMotion,
+  itenXR,
+  VStackMotion,
+  LinkMotion,
+} from "styles/animation";
+
+import {
   Drawer,
   DrawerHeader,
   DrawerBody,
@@ -35,8 +44,8 @@ const mobile = ({ isOpen, onClose, colorTheme }: Props) => {
         />
         <DrawerHeader fontSize="2xl">{i18n.t("titles.menu")}</DrawerHeader>
 
-        <DrawerBody>
-          <VStack
+        <DrawerBody overflow="hidden">
+          <VStackMotion
             mt="3rem"
             mb="2.5rem"
             spacing="2.5rem"
@@ -44,13 +53,26 @@ const mobile = ({ isOpen, onClose, colorTheme }: Props) => {
             fontSize="xl"
             fontWeight="semibold"
             onClick={onClose}
+            initial="hidden"
+            animate="visible"
+            variants={animationMotion}
           >
-            <Link href="#">{i18n.t("menu.home")}</Link>
-            <Link href="#about">{i18n.t("menu.about")}</Link>
-            <Link href="#attendace">{i18n.t("menu.attendace")}</Link>
-            <Link href="#services">{i18n.t("menu.services")}</Link>
-            <Link href="#contact">{i18n.t("menu.contact")}</Link>
-          </VStack>
+            <LinkMotion variants={itenXR} href="#">
+              {i18n.t("menu.home")}
+            </LinkMotion>
+            <LinkMotion variants={itenXR} href="#about">
+              {i18n.t("menu.about")}
+            </LinkMotion>
+            <LinkMotion variants={itenXR} href="#attendace">
+              {i18n.t("menu.attendace")}
+            </LinkMotion>
+            <LinkMotion variants={itenXR} href="#services">
+              {i18n.t("menu.services")}
+            </LinkMotion>
+            <LinkMotion variants={itenXR} href="#contact">
+              {i18n.t("menu.contact")}
+            </LinkMotion>
+          </VStackMotion>
 
           <Languages />
         </DrawerBody>

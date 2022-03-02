@@ -10,11 +10,11 @@ import imgEnglish from "assets/ingles.png";
 import { Menu, MenuButton, MenuList, MenuItem, Text } from "@chakra-ui/react";
 
 interface Props {
-  colorTheme?: string;
   colorBg?: string;
+  fw?: string;
 }
 
-const Languages = ({ colorTheme, colorBg }: Props) => {
+const Languages = ({ colorBg, fw = "semibold" }: Props) => {
   const handleLanguage = (language: string) => {
     const local = localStorage.getItem("i18nextLng");
 
@@ -28,7 +28,7 @@ const Languages = ({ colorTheme, colorBg }: Props) => {
 
   return (
     <Menu>
-      <MenuButton fontWeight={["semibold", "normal", "normal"]} fontSize="xl">
+      <MenuButton _hover={{ color: "secundary" }} fontWeight={fw} fontSize="xl">
         {i18n.t("menu.languages")}
       </MenuButton>
 

@@ -19,18 +19,7 @@ const Card = ({ title, img }: Props) => {
       bgPos="center"
       bgSize="cover"
       bgImage={img}
-    >
-      {/* <Box
-        w="100%"
-        h="8rem"
-        p="2rem"
-        borderRadius="0.5rem"
-        backdropFilter="blur(12px)"
-        bg="whiteAlpha.200"
-      >
-        <Heading textAlign="left">{title}</Heading>
-      </Box> */}
-    </Flex>
+    ></Flex>
   );
 };
 

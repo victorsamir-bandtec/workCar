@@ -10,23 +10,24 @@ import {
   HeadingProps,
   Text,
   TextProps,
+  LinkProps,
+  Link,
 } from "@chakra-ui/react";
 
 export const animationMotion = {
-  hidden: { opacity: 0, scale: 0 },
+  hidden: { opacity: 0 },
   visible: {
     opacity: 1,
-    scale: 1,
 
     transition: {
-      delayChildren: 0.4,
-      staggerChildren: 0.2,
+      delayChildren: 0.3,
+      staggerChildren: 0.15,
     },
   },
 };
 
 export const itenXL = {
-  hidden: { x: -300, opcity: 0 },
+  hidden: { x: -700, opcity: 0 },
   visible: {
     x: 0,
     opacity: 1,
@@ -34,7 +35,7 @@ export const itenXL = {
 };
 
 export const itenXR = {
-  hidden: { opcity: 0, x: 500 },
+  hidden: { opcity: 0, x: 700 },
   visible: {
     x: 0,
     opacity: 1,
@@ -46,3 +47,4 @@ export const BoxMotion = motion<BoxProps>(Box);
 export const VStackMotion = motion<StackProps>(VStack);
 export const HeadingMotion = motion<HeadingProps>(Heading);
 export const TextMotion = motion<TextProps>(Text);
+export const LinkMotion = motion<LinkProps>(Link);

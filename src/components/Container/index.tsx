@@ -6,7 +6,7 @@ const Container: React.FC = ({ children }) => {
 
   return (
     <>
-      <Box w="100%" p="7rem">
+      <Box w="100%" p={["1rem", "4rem", "7rem"]}>
         {children}
       </Box>
     </>

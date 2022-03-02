@@ -2,9 +2,9 @@ import { i18n } from "translate/i18n";
 import Container from "components/Container";
 
 import Image from "next/image";
-import imgLogo from "assets/logo.svg";
+import imgLogo from "assets/logoDark.svg";
 
-import { Box, Flex, Text, VStack } from "@chakra-ui/react";
+import { Box, Flex, Stack, Text, VStack } from "@chakra-ui/react";
 import Languages from "components/Languages";
 
 interface Props {
@@ -14,18 +14,22 @@ interface Props {
 
 const Footer = ({ colorTheme, colorBg }: Props) => {
   return (
-    <Container>
-      <Flex mt="3rem" w="100%" pt="4rem" align="start" justify="space-between">
+    <VStack mt="5rem" p="2rem 7rem" spacing="2rem" color="white" bg="primary">
+      <Flex w="100%" align="center" justify="space-between">
         <Box w="10rem" h="10rem">
           <Image src={imgLogo} alt="logo" />
         </Box>
 
-        <VStack align="start">
+        <Stack
+          direction={["column", "row"]}
+          align="start"
+          spacing={["1", "3rem"]}
+        >
           <Text
             cursor="pointer"
             fontWeight="bold"
             fontSize="xl"
-            _hover={{ color: colorTheme }}
+            _hover={{ color: "secundary" }}
             _after={{
               background: colorTheme,
             }}
@@ -39,7 +43,7 @@ const Footer = ({ colorTheme, colorBg }: Props) => {
             cursor="pointer"
             fontWeight="bold"
             fontSize="xl"
-            _hover={{ color: colorTheme }}
+            _hover={{ color: "secundary" }}
           >
             {i18n.t("menu.attendace")}
           </Text>
@@ -50,18 +54,22 @@ const Footer = ({ colorTheme, colorBg }: Props) => {
             cursor="pointer"
             fontWeight="bold"
             fontSize="xl"
-            _hover={{ color: colorTheme }}
+            _hover={{ color: "secundary" }}
           >
             {i18n.t("menu.services")}
           </Text>
-        </VStack>
+        </Stack>
 
-        <VStack align="start">
+        <Stack
+          direction={["column", "row"]}
+          align="start"
+          spacing={["1", "3rem"]}
+        >
           <Text
             cursor="pointer"
             fontWeight="bold"
             fontSize="xl"
-            _hover={{ color: colorTheme }}
+            _hover={{ color: "secundary" }}
           >
             {i18n.t("menu.about")}
           </Text>
@@ -70,20 +78,20 @@ const Footer = ({ colorTheme, colorBg }: Props) => {
             cursor="pointer"
             fontWeight="bold"
             fontSize="xl"
-            _hover={{ color: colorTheme }}
+            _hover={{ color: "secundary" }}
           >
             {i18n.t("menu.contact")}
           </Text>
 
           <Languages colorBg={colorBg} />
-        </VStack>
+        </Stack>
       </Flex>
 
-      <Text my="4rem" textAlign="center" fontSize="sm">
+      <Text my="4rem" textAlign="center" fontSize="md">
         Intelectual Property Protection - Privacy Policy©2020-2030 VipEsthetc.lu
         - All rights reserved.
       </Text>
-    </Container>
+    </VStack>
   );
 };
 

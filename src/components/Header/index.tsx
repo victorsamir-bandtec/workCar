@@ -4,7 +4,7 @@ import { i18n } from "translate/i18n";
 import Image from "next/image";
 import Mobile from "./mobile";
 import imgLogo from "assets/logo.svg";
-// import imgLogo from "assets/logoDark.svg";
+import imgLogoDark from "assets/logoDark.svg";
 
 import { HamburgerIcon, MoonIcon, SunIcon } from "@chakra-ui/icons";
 
@@ -33,6 +33,7 @@ interface Props {
 }
 
 const Header = ({ colorTheme, colorBg }: Props) => {
+  const { colorMode } = useColorMode();
   const { isOpen, onOpen, onClose } = useDisclosure();
 
   const { toggleColorMode } = useColorMode();
@@ -65,11 +66,12 @@ const Header = ({ colorTheme, colorBg }: Props) => {
         >
           <HStack spacing="1rem">
             <Box w="7.5rem" h="7.5rem" mt="1.5rem">
-              <Image src={imgLogo} alt="logo" />
+              {colorMode === "dark" ? (
+                <Image src={imgLogoDark} alt="logo" />
+              ) : (
+                <Image src={imgLogo} alt="logo" />
+              )}
             </Box>
-            {/* <Heading fontWeight="semibold" fontSize={["xl", "md", "xl"]}>
-              Esthetique
-            </Heading> */}
           </HStack>
 
           <Flex w={["none", "53%", "55%"]} justify="space-between">
@@ -85,7 +87,7 @@ const Header = ({ colorTheme, colorBg }: Props) => {
                   className="active"
                   cursor="pointer"
                   fontSize={["md", "md", "lg"]}
-                  _hover={{ color: colorTheme }}
+                  _hover={{ color: "secundary" }}
                   _after={{
                     background: colorTheme,
                   }}
@@ -100,7 +102,7 @@ const Header = ({ colorTheme, colorBg }: Props) => {
                   href="#skils"
                   cursor="pointer"
                   fontSize={["sm", "md", "lg"]}
-                  _hover={{ color: colorTheme }}
+                  _hover={{ color: "secundary" }}
                 >
                   {i18n.t("menu.attendace")}
                 </Text>
@@ -112,7 +114,7 @@ const Header = ({ colorTheme, colorBg }: Props) => {
                   href="#laboratorio"
                   cursor="pointer"
                   fontSize={["sm", "md", "lg"]}
-                  _hover={{ color: colorTheme }}
+                  _hover={{ color: "secundary" }}
                 >
                   {i18n.t("menu.services")}
                 </Text>
@@ -122,7 +124,7 @@ const Header = ({ colorTheme, colorBg }: Props) => {
                 <Text
                   cursor="pointer"
                   fontSize={["sm", "md", "lg"]}
-                  _hover={{ color: colorTheme }}
+                  _hover={{ color: "secundary" }}
                 >
                   {i18n.t("menu.about")}
                 </Text>
@@ -132,14 +134,14 @@ const Header = ({ colorTheme, colorBg }: Props) => {
                 <Text
                   cursor="pointer"
                   fontSize={["sm", "md", "lg"]}
-                  _hover={{ color: colorTheme }}
+                  _hover={{ color: "secundary" }}
                 >
                   {i18n.t("menu.contact")}
                 </Text>
               </BoxMotion>
 
               <BoxMotion variants={itenXR}>
-                <Languages />
+                <Languages fw="normal" />
               </BoxMotion>
             </FlexMotion>
 

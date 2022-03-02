@@ -10,11 +10,17 @@ type Props = {
 
 const Attendece = ({ title, description, img }: Props) => {
   return (
-    <VStack spacing="1rem">
+    <VStack
+      p="5rem 0"
+      borderRadius="1rem"
+      color="white"
+      spacing="1rem"
+      bg="primary"
+    >
       <Image src={img} alt="icon" />
 
       <Box textAlign="center">
-        <Heading mb="0.5rem" fontSize="2xl" fontWeight="normal">
+        <Heading mb="0.5rem" fontSize="2xl">
           {title}
         </Heading>
 
