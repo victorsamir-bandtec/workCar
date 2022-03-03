@@ -23,11 +23,13 @@ const Footer = ({ colorTheme, colorBg }: Props) => {
         <Stack
           direction={["column", "row"]}
           align="start"
+          fontWeight="bold"
           spacing={["1", "3rem"]}
         >
           <Text
+            as="a"
+            href="#home"
             cursor="pointer"
-            fontWeight="bold"
             fontSize="xl"
             _hover={{ color: "secundary" }}
             _after={{
@@ -39,45 +41,46 @@ const Footer = ({ colorTheme, colorBg }: Props) => {
 
           <Text
             as="a"
-            href="#skils"
+            href="#about"
             cursor="pointer"
-            fontWeight="bold"
-            fontSize="xl"
-            _hover={{ color: "secundary" }}
-          >
-            {i18n.t("menu.attendace")}
-          </Text>
-
-          <Text
-            as="a"
-            href="#laboratorio"
-            cursor="pointer"
-            fontWeight="bold"
-            fontSize="xl"
-            _hover={{ color: "secundary" }}
-          >
-            {i18n.t("menu.services")}
-          </Text>
-        </Stack>
-
-        <Stack
-          direction={["column", "row"]}
-          align="start"
-          spacing={["1", "3rem"]}
-        >
-          <Text
-            cursor="pointer"
-            fontWeight="bold"
-            fontSize="xl"
+            fontSize={["sm", "md", "xl"]}
             _hover={{ color: "secundary" }}
           >
             {i18n.t("menu.about")}
           </Text>
 
           <Text
+            as="a"
+            href="#attendece"
             cursor="pointer"
-            fontWeight="bold"
-            fontSize="xl"
+            fontSize={["sm", "md", "xl"]}
+            _hover={{ color: "secundary" }}
+          >
+            {i18n.t("menu.attendace")}
+          </Text>
+        </Stack>
+
+        <Stack
+          direction={["column", "row"]}
+          align="start"
+          fontWeight="bold"
+          spacing={["1", "3rem"]}
+        >
+          <Text
+            as="a"
+            href="#services"
+            cursor="pointer"
+            fontSize={["sm", "md", "xl"]}
+            _hover={{ color: "secundary" }}
+          >
+            {i18n.t("menu.services")}
+          </Text>
+
+          <Text
+            as="a"
+            href="#contact"
+            cursor="pointer"
+            fontSize={["sm", "md", "xl"]}
             _hover={{ color: "secundary" }}
           >
             {i18n.t("menu.contact")}

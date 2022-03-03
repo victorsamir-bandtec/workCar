@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { i18n } from "translate/i18n";
+
 import Image from "next/image";
 
 import Head from "next/head";
@@ -59,6 +61,8 @@ const Home = () => {
         <title>Vip Esthetique</title>
       </Head>
 
+      <span id="home"></span>
+
       <Header colorTheme={color.primary} colorBg={color.bg} />
 
       <Container>
@@ -78,15 +82,14 @@ const Home = () => {
           </Box>
 
           <VStack spacing={["1rem", "3rem"]}>
-            <Heading fontSize="4xl">Vip Esthetique</Heading>
+            <Heading fontSize="4xl">{i18n.t("titles.name")}</Heading>
 
             <Text fontSize="xl" maxW="52rem">
-              Empresa especializada em detalhamento automotivo, Com cede no
-              Luxemburgo.
+              {i18n.t("home.txt1")}
             </Text>
 
             <Box as="a" href="#about" mt="7rem">
-              <Button colorTheme={color.primary}>CONHECER</Button>
+              <Button colorTheme={color.primary}> {i18n.t("btn.txt1")}</Button>
             </Box>
           </VStack>
         </FlexMotion>
@@ -96,19 +99,15 @@ const Home = () => {
         <Box mt="9rem">
           <Flex
             flexDir={["column"]}
-            align={["start", "center"]}
+            align="center"
             justify={["center", "space-between"]}
           >
-            <VStack
-              align={["start", "center"]}
-              textAlign={["left", "center"]}
-              spacing="0"
-            >
-              <Heading fontSize={["4xl", "5xl"]}>Sobre nós</Heading>
+            <VStack align="center" textAlign="center" spacing="0">
+              <Heading fontSize={["4xl", "5xl"]}>
+                {i18n.t("titles.about")}
+              </Heading>
               <Text w={["100%", "80%"]} fontSize="xl">
-                Somos uma empresa especializada em embelezamento automotivo, Com
-                profissionais qualificados e certificados para atender todas
-                necessidades dos nossoss.
+                {i18n.t("about.txt1")}
               </Text>
             </VStack>
           </Flex>
@@ -148,36 +147,29 @@ const Home = () => {
           align="center"
           justify="start"
         >
-          <VStack
-            mb="6rem"
-            align={["start", "center"]}
-            textAlign={["left", "center"]}
-            spacing="0"
-          >
-            <Heading fontSize="4xl">Nosso atendimento</Heading>
+          <VStack mb="6rem" align="center" textAlign="center" spacing="0">
+            <Heading fontSize="4xl"> {i18n.t("titles.attendace")}</Heading>
             <Text w={["100%", "80%"]} fontSize="xl">
-              Trabalhamos com agendamento dos serviços para melhor atendimento
-              dos nossos clientes.
+              {i18n.t("attendace.txt1")}
             </Text>
           </VStack>
 
           <Stack direction={["column", "row"]} spacing="5rem">
             <Attendece
-              title="Agendamento"
-              description="Ligue para nós ou envie uma mensagem por um dos nossos canais"
+              title="attendace.txt2"
+              description="attendace.txt3"
               img={imgCalendar}
             />
 
             <Attendece
-              title="Check in do seu carro
-              "
-              description="Após agendado aguardamos você para recebermos seu carro.​"
+              title="attendace.txt4"
+              description="attendace.txt5"
               img={imgTruck}
             />
 
             <Attendece
-              title="Faremos o serviço"
-              description="Cuidaremos do seu veiculo de acordo com os serviços escolhidos."
+              title="attendace.txt6"
+              description="attendace.txt7"
               img={imgTool}
             />
           </Stack>
@@ -191,21 +183,10 @@ const Home = () => {
           align={["center", "start"]}
           justify={["start", "space-between"]}
         >
-          <Flex
-            w={["100%", "90%"]}
-            align="center"
-            flexDir="column"
-            mb="3rem"
-            mr={["none", "3rem"]}
-          >
+          <Flex w={["100%", "50%"]} align="center" flexDir="column" mb="3rem">
             <VStack align="center" textAlign="center">
-              <Heading fontSize="4xl">Nossos serviços</Heading>
-              <Text fontSize="xl">
-                Somos uma empresa especializada em embelezamento automotivo, Com
-                profissionais qualificados e certificados para atender todas
-                necessidades dos nossos clientes. O nosso diferencial é que
-                vamos até
-              </Text>
+              <Heading fontSize="4xl"> {i18n.t("titles.services")}</Heading>
+              <Text fontSize="xl">{i18n.t("services.txt1")}</Text>
             </VStack>
 
             <AspectRatio display={["block", "none"]} w="100%" mt="3rem">
@@ -216,8 +197,14 @@ const Home = () => {
               ></iframe>
             </AspectRatio>
 
-            <Text textAlign="center" fontSize="lg" mt="5rem" mb="1rem">
-              Faça o download do nosso catalogo, logo abaixo
+            <Text
+              textAlign="center"
+              fontSize="xl"
+              fontWeight="bold"
+              mt="4rem"
+              mb="1rem"
+            >
+              {i18n.t("services.txt2")}
             </Text>
 
             <Box>
@@ -225,7 +212,7 @@ const Home = () => {
             </Box>
           </Flex>
 
-          <AspectRatio display={["none", "block"]} w="70%" h="35rem">
+          <AspectRatio display={["none", "block"]} w="48%" h="37rem">
             <iframe
               src="https://www.youtube-nocookie.com/embed/XBwiz2Q3Bas?controls=0"
               title="YouTube video player"
@@ -236,21 +223,14 @@ const Home = () => {
 
         <Box mt="9rem">
           <Flex flexDir="column" align="start" justify="center">
-            <VStack
-              align={["start", "center"]}
-              textAlign={["left", "center"]}
-              spacing="0"
-            >
-              <Heading fontSize="4xl">Diferenciados</Heading>
+            <VStack align="center" textAlign="center" spacing="0">
+              <Heading fontSize="4xl"> {i18n.t("titles.difference")}</Heading>
               <Text w={["100%", "80%"]} fontSize="xl">
-                Somos uma empresa especializada em embelezamento automotivo, Com
-                profissionais qualificados e certificados para atender todas
-                necessidades dos nossos clientes. O nosso diferencial é que
-                vamos até
+                {i18n.t("difference.txt1")}
               </Text>
 
               <Text fontWeight="semibold" fontSize="xl">
-                Avaliação de valores sob análise do veículo.
+                {i18n.t("difference.txt2")}
               </Text>
             </VStack>
 
@@ -283,33 +263,28 @@ const Home = () => {
 
         <span id="contact"></span>
 
-        <Flex
-          mt="9rem"
-          flexDir="column"
-          align={["start", "center"]}
-          justify="start"
-        >
-          <VStack align={["start", "center"]} spacing="0">
-            <Heading fontSize="4xl">Localizados</Heading>
-            <Text fontSize="xl">
-              Somos uma empresa especializada em embelezamento automotivo,
-              profissionais qualificados e certificados para para.
-            </Text>
+        <Flex mt="9rem" flexDir="column" align="center" justify="start">
+          <VStack align="center" textAlign="center" spacing="0">
+            <Heading fontSize="4xl"> {i18n.t("titles.localization")}</Heading>
+            <Text fontSize="xl">{i18n.t("localization.txt1")}</Text>
           </VStack>
 
-          <AspectRatio my="3rem" w="100%" h={["100%", "45rem"]}>
+          <AspectRatio
+            my="3rem"
+            w="100%"
+            h={["100%", "45rem"]}
+            _before={{ padding: "none" }}
+          >
             <iframe
-              allowFullScreen
               src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2583.3086484024284!2d5.961401315363969!3d49.648483452704085!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x47eab3c02eafff8d%3A0x3e0ee41c70f87651!2sVIP%20-%20Esth%C3%A9tique%20Automotive!5e0!3m2!1spt-BR!2sbr!4v1643949258154!5m2!1spt-BR!2sbr"
               loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             ></iframe>
           </AspectRatio>
 
-          <VStack my="4rem" align={["start", "center"]} spacing="0">
-            <Heading fontSize="4xl">Contato</Heading>
-            <Text fontSize="xl">
-              Somos uma empresa especializada em embelezamento automotivo.
-            </Text>
+          <VStack mt="4rem" align="center" textAlign="center" spacing="0">
+            <Heading fontSize="4xl"> {i18n.t("titles.contact")}</Heading>
+            <Text fontSize="xl">{i18n.t("contact.txt1")}</Text>
           </VStack>
         </Flex>
 
@@ -322,11 +297,12 @@ const Home = () => {
               href="tel:+352 621 512 645"
               spacing="0"
               borderRadius="1rem"
+              cursor="pointer"
               bg="primary"
             >
               <Image src={imgPhone} alt="phone" />
               <Text fontWeight="semibold" fontSize="2xl">
-                Telefone
+                {i18n.t("contact.txt2")}
               </Text>
               <Text fontSize="lg">(+352) 621 512 645</Text>
             </VStack>
@@ -338,11 +314,12 @@ const Home = () => {
               href="https://www.instagram.com/vipesthetique.lu"
               spacing="0"
               borderRadius="1rem"
+              cursor="pointer"
               bg="primary"
             >
               <Image src={imgInst} alt="instagram" />
               <Text fontWeight="semibold" fontSize="2xl">
-                Instagram
+                {i18n.t("contact.txt3")}
               </Text>
               <Text fontSize="lg">vipesthetique.lu</Text>
             </VStack>
@@ -354,11 +331,12 @@ const Home = () => {
               href="https://www.facebook.com/vipesthetique.lu"
               spacing="0"
               borderRadius="1rem"
+              cursor="pointer"
               bg="primary"
             >
               <Image src={imgFace} alt="facebook" />
               <Text fontWeight="semibold" fontSize="2xl">
-                Facebook
+                {i18n.t("contact.txt4")}
               </Text>
               <Text fontSize="lg">vipesthetique.lu</Text>
             </VStack>
@@ -370,11 +348,12 @@ const Home = () => {
               href="mailto:contact@vipesthetique.lu"
               spacing="0"
               borderRadius="1rem"
+              cursor="pointer"
               bg="primary"
             >
               <Image src={imgEmail} alt="email" />
               <Text fontWeight="semibold" fontSize="2xl">
-                Email
+                {i18n.t("contact.txt5")}
               </Text>
               <Text fontSize="lg">contact@vipesthetique.lu</Text>
             </VStack>

@@ -99,7 +99,19 @@ const Header = ({ colorTheme, colorBg }: Props) => {
               <BoxMotion variants={itenXR}>
                 <Text
                   as="a"
-                  href="#skils"
+                  href="#about"
+                  cursor="pointer"
+                  fontSize={["sm", "md", "lg"]}
+                  _hover={{ color: "secundary" }}
+                >
+                  {i18n.t("menu.about")}
+                </Text>
+              </BoxMotion>
+
+              <BoxMotion variants={itenXR}>
+                <Text
+                  as="a"
+                  href="#attendece"
                   cursor="pointer"
                   fontSize={["sm", "md", "lg"]}
                   _hover={{ color: "secundary" }}
@@ -111,7 +123,7 @@ const Header = ({ colorTheme, colorBg }: Props) => {
               <BoxMotion variants={itenXR}>
                 <Text
                   as="a"
-                  href="#laboratorio"
+                  href="#services"
                   cursor="pointer"
                   fontSize={["sm", "md", "lg"]}
                   _hover={{ color: "secundary" }}
@@ -122,16 +134,8 @@ const Header = ({ colorTheme, colorBg }: Props) => {
 
               <BoxMotion variants={itenXR}>
                 <Text
-                  cursor="pointer"
-                  fontSize={["sm", "md", "lg"]}
-                  _hover={{ color: "secundary" }}
-                >
-                  {i18n.t("menu.about")}
-                </Text>
-              </BoxMotion>
-
-              <BoxMotion variants={itenXR}>
-                <Text
+                  as="a"
+                  href="#contact"
                   cursor="pointer"
                   fontSize={["sm", "md", "lg"]}
                   _hover={{ color: "secundary" }}

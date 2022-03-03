@@ -20,7 +20,7 @@ const Button = ({
       {secundary ? (
         <Buttons
           onClick={onClick}
-          p="2rem 3.2rem"
+          p="2.2rem 3.5rem"
           fontSize="md"
           borderRadius="0.5rem"
           borderColor={colorTheme}
@@ -37,7 +37,7 @@ const Button = ({
           className="btn"
           position="relative"
           onClick={onClick}
-          p="2rem 3.2rem"
+          p="2.2rem 3.5rem"
           fontSize="md"
           borderRadius="0.5rem"
           border="unset"

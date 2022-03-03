@@ -21,15 +21,15 @@ const GlobalStyle = () => {
             scroll-behavior: smooth;
 
             @media (max-width: 1170px) {
-              font-size: 59%;
+              font-size: 57%;
             }
 
             @media (max-width: 1085px) {
-              font-size: 55%;
+              font-size: 53%;
             }
 
             @media (max-width: 768px) {
-              font-size: 48%;
+              font-size: 45%;
             }
           }
 

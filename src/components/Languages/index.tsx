@@ -49,7 +49,7 @@ const Languages = ({ colorBg, fw = "semibold" }: Props) => {
           </Text>
         </MenuItem>
 
-        <MenuItem onClick={() => handleLanguage("pt-br")}>
+        <MenuItem onClick={() => handleLanguage("fr-FR")}>
           <Image width="20px" height="20px" src={imgFrance} alt="frace" />
 
           <Text as="span" ml="2rem">

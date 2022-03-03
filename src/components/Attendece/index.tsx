@@ -1,6 +1,7 @@
 import Image from "next/image";
 
 import { Box, Heading, Text, VStack } from "@chakra-ui/react";
+import { i18n } from "translate/i18n";
 
 type Props = {
   title: string;
@@ -21,11 +22,11 @@ const Attendece = ({ title, description, img }: Props) => {
 
       <Box textAlign="center">
         <Heading mb="0.5rem" fontSize="2xl">
-          {title}
+          {i18n.t(title)}
         </Heading>
 
         <Text w="80%" m="auto" fontSize="lg">
-          {description}
+          {i18n.t(description)}
         </Text>
       </Box>
     </VStack>
